@@ -47,17 +47,17 @@ services:
       - DRONE_ADMIN=cuong
       - DRONE_OPEN=true
       #- DRONE_HOST=http://drone-server:8381
-      - DRONE_HOST=http://192.168.1.60:8381
+      - DRONE_HOST=http://192.168.1.55:8381
       - DRONE_SECRET=CSLaMotConLua
       - DRONE_GITEA=true
       #- DRONE_GITEA_URL=http://gitea-server:3000/
-      - DRONE_GITEA_URL=http://192.168.1.60:3000/
+      - DRONE_GITEA_URL=http://192.168.1.55:3000/
       - DRONE_NETWORK=gitea
     depends_on:
       - gitea-server
 
   drone-agent:
-    image: drone/agent:0.8
+    image: drone/agent:latest
     command: agent
     restart: always
     networks:
